@@ -46,9 +46,7 @@ public class MyFrame extends javax.swing.JFrame {
      */
     public DefaultListModel defaultListModel;
     
-    private Connect connect;
-    public MyFrame() {
-        connect.connect();
+    public MyFrame()throws Exception {
         initComponents();
         showWord.setVisible(false);
         backButton.setVisible(false);
@@ -1102,8 +1100,8 @@ public class MyFrame extends javax.swing.JFrame {
     private void wordTargetKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_wordTargetKeyPressed
         // TODO add your handling code here:
         //wordTarget.setText(wordTarget.getText().toLowerCase());
-        /*
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        
+      /*  if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             
             String explain = DictionaryManagement.lookUpWord(wordTarget.getText().toLowerCase().trim(), Dictionary.getArrayWord(), 0, Dictionary.getArrayWord().size() - 1);
             //System.out.println(explain);
@@ -1116,13 +1114,13 @@ public class MyFrame extends javax.swing.JFrame {
             backButton.setVisible(true);
             menuPanel.setVisible(false);
             suggestPopup.setVisible(false); 
-        } 
-        */
+        } */
+        
         
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {    
             String explain;
             try {
-                explain = connect.getExplain(wordTarget.getText().trim());
+                explain = DictionaryCommandLine1.connect.getExplain(wordTarget.getText().trim());
                 word_target1.setText(wordTarget.getText());
                 word_type1.setText("");
                 word_pronoun1.setText("");
@@ -1136,7 +1134,7 @@ public class MyFrame extends javax.swing.JFrame {
                 Logger.getLogger(MyFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-        }    
+        } 
         
         /*
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -1575,7 +1573,11 @@ public class MyFrame extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MyFrame().setVisible(true);
+                try {
+                    new MyFrame().setVisible(true);
+                } catch (Exception ex) {
+                    Logger.getLogger(MyFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

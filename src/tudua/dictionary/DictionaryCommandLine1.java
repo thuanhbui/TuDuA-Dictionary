@@ -45,11 +45,12 @@ public class DictionaryCommandLine1 {
             }
         }
     }
-
+    public static Connect connect = new Connect();
     public static void main(String [] args) throws FileNotFoundException {
         //dictionaryBasic();
         //dictionaryAdvanced();
         //DictionaryApplication.runApplication();
+        connect.connect();
         DictionaryApplication.runApplication();
         //new NewJFrame();
     }
