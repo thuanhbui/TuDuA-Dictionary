@@ -25,7 +25,7 @@ public class Translator {
     public static String text_translate(String text) throws IOException {
         String fromLang = "en";
         String toLang = "vi";
-        System.out.print("Nghia van ban: ");
+        //System.out.print("Nghia van ban: ");
         return Translator.translate(fromLang, toLang, text);
     }
 
@@ -60,13 +60,15 @@ public class Translator {
         int statusCode = conn.getResponseCode();
         //System.out.println("Status Code: " + statusCode);
         BufferedReader br = new BufferedReader(new InputStreamReader((statusCode == 200) ? conn.getInputStream() : conn.getErrorStream()));
+        String translate = "";
         String output;
         while ((output = br.readLine()) != null) {
-            System.out.println(output);
-            return output;
+            //System.out.println(output);
+            //return output;
+            translate += output;
         }
         conn.disconnect();
         //return output;
-        return null;
+        return translate;
     }
 }

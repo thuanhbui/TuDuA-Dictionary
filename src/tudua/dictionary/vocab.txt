@@ -1,26 +1,6 @@
-April	n.	(abbr. Apr.)	/'eiprəl/
-August	n.	/'ɔ:gəst - ɔ:'gʌst/	tháng Tám
-December	n.	/di'sembə/	tháng mười hai, tháng Chạp
-February	n.	(abbr. Feb.)	/´februəri/ tháng 2
-Friday	n.	/´fraidi/	thứ Sáu
-January	n.	(abbr. Jan.)	/'ʤænjuəri/
-July	n.	(abbr. Jul.)	/dʒu´lai/
-June	n.	/dЗu:n/	tháng 6
-March	n.	/mɑ:tʃ/	tháng ba
-May	n.	/mei/	tháng 5
-Miss	n.	/mis/	cô gái, thiếu nữ
-Monday	n.	/'mʌndi/	thứ 2
-Nhập từ bạn muốn thêm	Nhap tu loai	Nhap phat am	Nghĩa tiếng Việt là:
-November	n.	/nou´vembə/	tháng 11
-OK	exclamation, adj., adv.	/əʊkei/	đồng ý, tán thành
-October	n.	/ɔk´toubə/	tháng 10
-Saturday	n.	(abbr. Sat.)	/'sætədi/
-September	n.	/sep´tembə/	tháng 9
-Sunday	n.	/´sʌndi/	Chủ nhật
-THATKO	Nhập từ loại	Nhập phát âm	Nghĩa tiếng Việt là:
-Wednesday	n.	/´wensdei/	thứ 4
-abandon	v.	/ə'bændən/	bỏ, từ bỏ
+abandon	v	//	cấm
 abandoned	adj.	/ə'bændənd/	bị bỏ rơi, bị ruồng bỏ
+abcd	Nhập từ loại	Nhập phát âm	Nghĩa tiếng Việt là:
 ability	n.	/ə'biliti/	khả năng, năng lực
 able	adj.	/'eibl/	có năng lực, có tài
 about	adv., prep.	/ə'baut/	khoảng, về
@@ -100,6 +80,11 @@ aid	n., v.	/eid/	sự giúp đỡ; thêm vào, phụ vào
 aim	n., v.	/eim/	sự nhắm (bắn), mục tiêu, ý định; nhắm, tập trung, hướng vào
 air	n.	/eə/	không khí, bầu không khí, không gian
 aircraft	n.	/'eəkrɑ:ft/	máy bay, khí cầu
+ajsdbkhsd	Nhập từ loại	Nhập phát âm	Nghĩa tiếng Việt là:
+alaba	Nhập từ loại	Nhập phát âm	Nghĩa tiếng Việt là:
+alaba	Nhập từ loại mới	Nhập phát âm mới	Nghĩa tiếng Việt mới:
+alaba	Nhập từ loại mới	Nhập phát âm mới	Nghĩa tiếng Việt mới:
+alala	Nhập từ loại	Nhập phát âm	Nghĩa tiếng Việt là:
 alarm	n., v.	/ə'lɑ:m/	báo động, báo nguy
 alarming	adj.	/ə'lɑ:miɳ/	làm lo sợ, làm hốt hoảng, làm sợ hãi
 alcohol	n.	/'ælkəhɔl/	rượu cồn
@@ -181,6 +166,7 @@ approval	n.	/ə'pru:vəl/	sự tán thành, đồng ý, sự chấp thuận
 approving	adj.	/ə'pru:viɳ/	tán thành, đồng ý, chấp thuận
 approximate	adj.	/ə'prɔksimit/	giống với, giống hệt với
 approximately	adv.	/ə'prɔksimitli/	khoảng chừng, độ chừng
+april	n.	(abbr. Apr.)	/'eiprəl/
 area	n.	/'eəriə/	diện tích, bề mặt
 argue	v.	/'ɑ:gju:/	chứng tỏ, chỉ rõ
 argument	n.	/'ɑ:gjumənt/	lý lẽ
@@ -227,6 +213,7 @@ attract	v.	/ə'trækt/	hút; thu hút, hấp dẫn
 attraction	n.	/ə'trækʃn/	sự hút, sức hút
 attractive	adj.	/ə'træktiv/	hút, thu hút, có duyên, lôi cuốn
 audience	n.	/'ɔ:djəns/	thính, khan giả
+august	n.	/'ɔ:gəst - ɔ:'gʌst/	tháng Tám
 aunt	n.	/ɑ:nt/	cô, dì
 author	n.	/'ɔ:θə/	tác giả
 authority	n.	/ɔ:'θɔriti/	uy quyền, quyền lực
@@ -514,6 +501,9 @@ coast	n.	/koust/	sự lao dốc; bờ biển
 coat	n.	/koʊt/	áo choàng
 code	n.	/koud/	mật mã, luật, điều lệ
 coffee	n.	/'kɔfi/	cà phê
+coHuyen	Nhập từ loại mới	Nhập phát âm mới	Nghĩa tiếng Việt mới:
+cohuyenn	Nhập từ loại	Nhập phát âm	Nghĩa tiếng Việt là:
+coHuyenOOP	Nhập từ loại	Nhập phát âm	Nghĩa tiếng Việt là:
 coin	n.	/kɔin/	tiền kim loại
 cold	adj., n.	/kould/	lạnh, sự lạnh lẽo, lạnh nhạt
 coldly	adv.	/'kouldli/	lạnh nhạt, hờ hững, vô tâm
@@ -725,6 +715,7 @@ debate	n., v.	/dɪˈbeɪt/	cuộc tranh luận, cuộc tranh cãi; tranh luận,
 debt	n.	/det/	nợ
 decade	n.	/'dekeid/	thập kỷ, bộ mười, nhóm mười
 decay	n., v.	/di'kei/	tình trạng suy tàn, suy sụp, tình trạng đổ nát
+december	n.	/di'sembə/	tháng mười hai, tháng Chạp
 decide	v.	/di'said/	quyết định, giải quyết, phân xử
 decision	n.	/diˈsiʒn/	sự quyết định, sự giải quyết, sự phân xử
 declare	v.	/di'kleə/	tuyên bố, công bố
@@ -1100,6 +1091,7 @@ favourite	adj., n.	/'feivзrit/	được ưa thích; người (vật) được �
 fear	n., v.	/fɪər/	sự sợ hãi, e sợ; sợ, lo ngại
 feather	n.	/'feðə/	lông chim
 feature	n., v.	/'fi:tʃə/	nét đặt biệt, điểm đặc trưng; mô tả nét đặc biệt, đặc trưng của...
+february	n.	(abbr. Feb.)	/´februəri/ tháng 2
 federal	adj.	/'fedərəl/	liên bang
 fee	n.	/fi:/	tiền thù lao, học phí
 feed	v.	/fid/	cho ăn, nuôi
@@ -1186,6 +1178,7 @@ freeze	n., v.	/fri:z/	sự đông lạnh, sự giá lạnh; làm đông, làm đ
 frequently	adv.	/´fri:kwəntli/	thường xuyên
 fresh	adj.	/freʃ/	tươi, tươi tắn
 freshly	adv.	/´freʃli/	tươi mát, khỏe khoắn
+friday	n.	/´fraidi/	thứ Sáu
 fridge	n.	/fridЗ/	tủ lạnh
 friend	n.	/frend/	người bạn
 friendly	adj.	/´frendli/	thân thiện, thân mật
@@ -1330,6 +1323,8 @@ heaven	n.	/ˈhɛvən/	thiên đường
 heavily	adv.	/´hevili/	nặng, nặng nề
 heavy	adj.	/'hevi/	nặng, nặng nề
 heel	n.	/hi:l/	gót chân
+hehe	Nhập từ loại mới	Nhập phát âm mới	rgvw
+hehe	Nhập từ loại mới	Nhập phát âm mới	rgvw
 height	n.	/hait/	chiều cao, độ cao; đỉnh, điểm cao
 hell	n.	/hel/	địa ngục
 hello	n.	/hз'lou/	chào, xin chào; lời chào
@@ -1347,6 +1342,7 @@ highlight	v., n.	/ˈhaɪˌlaɪt/	làm nổi bật, nêu bật; chỗ nổi bật
 highly	adv.	/´haili/	tốt, cao; hết sức, ở mức độ cao
 highway	n.	/´haiwei/	đường quốc lộ
 hihahl	Nhập từ loại	Nhập phát âm	Nghĩa tiếng Việt là:
+hihi	Nhập từ loại	Nhập phát âm	Nghĩa tiếng Việt là:
 him	pron.	/him/	nó, hắn, ông ấy, anh ấy
 himself	pron.	/him´self/	chính nó, chính hắn, chính ông ta, chính anh ta
 hire	v., n.	/haiə/	thuê, cho thuê (nhà...); sự thuê, sự cho thuê
@@ -1355,6 +1351,7 @@ historical	adj.	/his'tɔrikəl/	lịch sử, thuộc lịch sử
 history	n.	/´histəri/	lịch sử, sử học
 hit	v., n.	/hit/	đánh, đấm, ném trúng; đòn, cú đấm
 hobby	n.	/'hɒbi/	sở thích riêng
+hohoho	Nhập từ loại	Nhập phát âm	Nghĩa tiếng Việt là:
 hold	v., n.	/hould/	cầm, nắm, giữ; sự cầm, sự nắm giữ
 hole	n.	/'houl/	lỗ, lỗ trống; hang
 holiday	n.	/'hɔlədi/	ngày lễ, ngày nghỉ
@@ -1523,6 +1520,7 @@ its	det.	/its/	của cái đó, của điều đó, của con vật đó; cái c
 itself	pron.	/it´self/	chính cái đó, chính điều đó, chính con vật đó
 jacket	n.	/'dʤækit/	áo vét
 jam	n.	/dʒæm/	mứt
+january	n.	(abbr. Jan.)	/'ʤænjuəri/
 jealous	adj.	/'ʤeləs/	ghen,, ghen tị
 jeans	n.	/dЗeins/	quần bò, quần zin
 jelly	n.	/´dʒeli/	thạch
@@ -1539,7 +1537,9 @@ joy	n.	/dʒɔɪ/	niềm vui, sự vui mừng
 judge	n., v.	/dʒʌdʒ/	xét xử, phân xử; quan tòa, thẩm phán
 judgement	n.	/'dʤʌdʤmənt/	sự xét xử
 juice	n.	/ʤu:s/	nước ép (rau, củ, quả)
+july	n.	(abbr. Jul.)	/dʒu´lai/
 jump	v., n.	/dʒʌmp/	nhảy; sự nhảy, bước nhảy
+june	n.	/dЗu:n/	tháng 6
 junior	adj., n.	/´dʒu:niə/	trẻ hơn, ít tuổi hơn; người ít tuổi hơn
 just	adv.	/dʤʌst/	đúng, vừa đủ; vừa mới, chỉ
 justice	n.	/'dʤʌstis/	sự công bằng
@@ -1706,6 +1706,7 @@ manufacture	v., n.	/,mænju'fæktʃə/	sản xuất, chế tạo
 manufacturer	n.	/¸mæni´fæktʃərə/	người chế tạo, người sản xuất
 many	det., pron.	/'meni/	nhiều
 map	n.	/mæp/	bản đồ
+march	n.	/mɑ:tʃ/	tháng ba
 mark	n., v.	/mɑ:k/	dấu, nhãn, nhãn mác; đánh dấu, ghi dấu
 market	n.	/'mɑ:kit/	chợ, thị trường
 marketing	n.	/'mα:kitiη/	ma-kết-tinh
@@ -1722,6 +1723,7 @@ material	n., adj.	/mə´tiəriəl/	nguyên vật liệu; vật chất, hữu hì
 mathematics	n.	/,mæθi'mætiks/	toán học, môn toán
 matter	n., v.	/'mætə/	chất, vật chất; có ý nghĩa, có tính chất quan trọng
 maximum	adj., n.	/´mæksiməm/	cực độ, tối đa; trị số cực đại, lượng cực đại, cực độ
+may	n.	/mei/	tháng 5
 may	modal v.	/mei/	có thể, có lẽ
 maybe	adv.	/´mei¸bi:/	có thể, có lẽ
 mayor	n.	/mɛə/	thị trưởng
@@ -1774,6 +1776,7 @@ minor	adj.	/´mainə/	nhỏ hơn, thứ yếu, không quan trọng
 minority	n.	/mai´nɔriti/	phần ít, thiểu số
 minute	n.	/'minit/	phút
 mirror	n.	/ˈmɪrər/	gương
+miss	n.	/mis/	cô gái, thiếu nữ
 miss	v., n.	/mis/	lỡ, trượt; sự trượt, sự thiếu vắng
 missing	adj.	/´misiη/	vắng, thiếu, thất lạc
 mistake	n., v.	/mis'teik/	lỗi, sai lầm, lỗi lầm; phạm lỗi, phạm sai lầm
@@ -1785,6 +1788,7 @@ mobile	adj.	/'məʊbail; 'məʊbi:l/	chuyển động, di động
 model	n.	/ˈmɒdl/	mẫu, kiểu mẫu
 modern	adj.	/'mɔdən/	hiện đại, tân tiến
 moment	n.	/'məum(ə)nt/	chốc, lát
+monday	n.	/'mʌndi/	thứ 2
 money	n.	/'mʌni/	tiền
 monitor	n., v.	/'mɔnitə/	lớp trưởng, màn hình máy tính; nghe, ghi phát thanh, giám sát
 month	n.	/mʌnθ/	tháng
@@ -1861,6 +1865,8 @@ newly	adv.	/´nju:li/	mới
 news	n.	/nju:z/	tin, tin tức
 newspaper	n.	/'nju:zpeipə/	báo
 next	adj., adv., n.	/nekst/	sát, gần, bên cạnh; lần sau, tiếp nữa
+Nhập từ bạn muốn thêm	Nhập từ loại	Nhập phát âm	Nghĩa tiếng Việt là:
+nhập từ bạn muốn thêm	Nhap tu loai	Nhap phat am	Nghĩa tiếng Việt là:
 nice	adj.	/nais/	đẹp, thú vị, dễ chịu
 nicely	adv.	/´naisli/	thú vị, dễ chịu
 niece	n.	/ni:s/	cháu gái
@@ -1883,6 +1889,7 @@ nothing	pron.	/ˈnʌθɪŋ/	không gì, không cái gì
 notice	n., v.	/'nәƱtis/	thông báo, yết thị; chú ý, để ý, nhận biết
 noticeable	adj.	/ˈnoʊtɪsəbəl/	đáng chú ý, đáng để ý
 novel	n.	/ˈnɒvəl/	tiểu thuyết, truyện
+november	n.	/nou´vembə/	tháng 11
 now	adv.	/nau/	bây giờ, hiện giờ, hiện nay
 nowhere	adv.	/´nou¸wɛə/	không nơi nào, không ở đâu
 nuclear	adj.	/'nju:kliз/	(thuộc) hạt nhân
@@ -1903,6 +1910,7 @@ occupied	adj.	/'ɔkjupaid/	đang sử dụng, đầy (người)
 occupy	v.	/'ɔkjupai/	giữ, chiếm lĩnh, chiếm giữ
 occur	v.	/ə'kə:/	xảy ra, xảy đến, xuất hiện
 ocean	n.	/'əuʃ(ə)n/	đại dương
+october	n.	/ɔk´toubə/	tháng 10
 odd	adj.	/ɔd/	kỳ quặc, kỳ cục, lẻ (số)
 oddly	adv.	/´ɔdli/	kỳ quặc, kỳ cục, lẻ (số)
 off	adv., prep.	/ɔ:f/	tắt; khỏi, cách, rời
@@ -1916,7 +1924,9 @@ official	adj., n.	/ə'fiʃəl/	(thuộc) chính quyền, văn phòng; viên ch�
 officially	adv.	/ə'fi∫əli/	một cách trịnh trọng, một cách chính thức
 often	adv.	/'ɔ:fn/	thường, hay, luôn
 oil	n.	/ɔɪl/	dầu
+ok	exclamation, adj., adv.	/əʊkei/	đồng ý, tán thành
 okela	Nhập từ loại	Nhập phát âm	Nghĩa tiếng Việt là:
+okiav	Nhập từ loại mới	Nhập phát âm mới	rgvw
 okihjj	Nhập từ loại	Nhập phát âm	Nghĩa tiếng Việt là:
 old	adj.	/ould/	già
 once	adv., conj.	/wʌns/	một lần;  khi mà, ngay khi, một khi
@@ -2454,6 +2464,7 @@ satisfaction	n.	/,sætis'fæk∫n/	sự làm cho thỏa mãn, toại nguyện; s
 satisfied	adj.	/'sætisfaid/	cảm thấy hài lòng, vừa ý, thoả mãn
 satisfy	v.	/'sætisfai/	làm thỏa mãn, hài lòng; trả (nợ), chuộc tội
 satisfying	adj.	/'sætisfaiiη/	đem lại sự thỏa mãn, làm thỏa mãn, làm vừa ý
+saturday	n.	(abbr. Sat.)	/'sætədi/
 sauce	n.	/sɔ:s/	nước xốt, nước chấm
 save	v.	/seiv/	cứu, lưu
 saving	n.	/´seiviη/	sự cứu, sự tiết kiệm
@@ -2508,6 +2519,7 @@ separate	adj., v.	/'seprət/	khác nhau, riêng biệt; làm rời, tách ra, ch
 separated	adj.	/'seprətid/	ly thân
 separately	adv.	/'seprətli/	không cùng nhau, thành người riêng, vật riêng
 separation	n.	/¸sepə´reiʃən/	sự chia cắt, phân ly, sự chia tay, ly thân
+september	n.	/sep´tembə/	tháng 9
 series	n.	/ˈsɪəriz/	loạt, dãy, chuỗi
 serious	adj.	/'siәriәs/	đứng đắn, nghiêm trang
 seriously	adv.	/siəriəsli/	đứng đắn, nghiêm trang
@@ -2789,6 +2801,7 @@ sum	n.	/sʌm/	tổng, toàn bộ
 summary	n.	/ˈsʌməri/	bản tóm tắt
 summer	n.	/ˈsʌmər/	mùa hè
 sun	n.	/sʌn/	mặt trời
+sunday	n.	/´sʌndi/	Chủ nhật
 superior	adj.	/su:'piәriә(r)/	cao, chất lượng cao
 supermarket	n.	/´su:pə¸ma:kit/	siêu thị
 supply	n., v.	/sə'plai/	sự cung cấp, nguồn cung cấp; cung cấp, đáp ứng, tiếp tế
@@ -2866,6 +2879,8 @@ term	n.	/tɜ:m/	giới hạn, kỳ hạn, khóa, kỳ học
 terrible	adj.	/'terəbl/	khủng khiếp, ghê sợ
 terribly	adv.	/'terəbli/	tồi  tệ, không chịu nổi
 test	n., v.	/test/	bài kiểm tra, sự thử nghiệm, xét nghiệm; kiểm tra, xét nghiệm, thử nghiệm
+testtt	Nhập từ loại	Nhập phát âm	Nghĩa tiếng Việt là:
+testxx	Nhập từ loại	Nhập phát âm	Nghĩa tiếng Việt là:
 text	n.	/tɛkst/	nguyên văn, bản văn, chủ đề, đề tì
 than	prep., conj.	/ðæn/	hơn
 thank	v.	/θæŋk/	cám ơn
@@ -3158,6 +3173,7 @@ wear	v.	/weə/	mặc, mang, đeo
 weather	n.	/'weθə/	thời tiết
 web	n.	/wɛb/	mạng, lưới
 wedding	n.	/ˈwɛdɪŋ/	lễ cưới, hôn lễ
+wednesday	n.	/´wensdei/	thứ 4
 week	n.	/wi:k/	tuần, tuần lễ
 weekend	n.	/¸wi:k´end/	cuối tuần
 weekly		adj.	/´wi:kli/
@@ -3254,4 +3270,5 @@ your	det.	/jo:/	của anh, của chị, của ngài, của mày; của các anh,
 yours	pron.	/jo:z/	cái của anh, cái của chị, cái của ngài, cái của mày; cái của các anh, cái của các chị, cái của các ngài, cái của chúng mày
 yourself	pron.	/jɔ:'self/	tự anh, tự chị, chính anh, chính mày, tự mày, tự mình
 youth	n.	/ju:θ/	tuổi trẻ, tuổi xuân, tuổi thanh niên, tuổi niên thiếu
-zero	n.	/'ziərou/	số không
+zero	Nhập từ loại mới	Nhập phát âm mới	nh
+zz	Nhập từ loại mới	Nhập phát âm mới	Nghĩa tiếng Việt mới:

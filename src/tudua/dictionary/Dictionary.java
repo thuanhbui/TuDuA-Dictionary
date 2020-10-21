@@ -36,7 +36,7 @@ public class Dictionary {
         Collections.sort(words, new Comparator<Word>() {
             @Override
             public int compare(Word o1, Word o2) {
-                return (o1.getWord_target().compareTo(o2.getWord_target()));
+                return (o1.getWord_target().compareToIgnoreCase(o2.getWord_target()));
             }
         });
     }
@@ -54,6 +54,12 @@ public class Dictionary {
     }
     
     public static String[] toArray() {
+        Collections.sort(words, new Comparator<Word>() {
+            @Override
+            public int compare(Word o1, Word o2) {
+                return (o1.getWord_target().compareToIgnoreCase(o2.getWord_target()));
+            }
+        });
         String[] res = new String[words.size()];
         for (int i = 0; i < words.size(); i++) {
             res[i] = words.get(i).getWord_target();

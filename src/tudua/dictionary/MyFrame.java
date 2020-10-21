@@ -20,9 +20,11 @@ import java.awt.Font;
 import java.awt.PopupMenu;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static javax.management.remote.JMXConnectorFactory.connect;
 import javax.swing.Action;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
@@ -44,7 +46,9 @@ public class MyFrame extends javax.swing.JFrame {
      */
     public DefaultListModel defaultListModel;
     
+    private Connect connect;
     public MyFrame() {
+        connect.connect();
         initComponents();
         showWord.setVisible(false);
         backButton.setVisible(false);
@@ -55,6 +59,7 @@ public class MyFrame extends javax.swing.JFrame {
         workingPanel4.setVisible(false);
         defaultListModel = new DefaultListModel();
         wordList.setListData(Dictionary.toArray());
+        
         //wordList
         wordList.setSelectedIndex(0);
         word_target.setText(Dictionary.getWord(0).getWord_target().trim());
@@ -172,9 +177,11 @@ public class MyFrame extends javax.swing.JFrame {
         addType = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         addSpell = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         removePanel = new javax.swing.JPanel();
         deleteDic = new javax.swing.JTextField();
         deleteButton = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         editWPanel = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         addType1 = new javax.swing.JTextField();
@@ -182,6 +189,7 @@ public class MyFrame extends javax.swing.JFrame {
         addTarget1 = new javax.swing.JTextField();
         jScrollPane8 = new javax.swing.JScrollPane();
         addExplain1 = new javax.swing.JTextArea();
+        jLabel9 = new javax.swing.JLabel();
         showallPanel = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         wordList = new javax.swing.JList<>();
@@ -198,6 +206,8 @@ public class MyFrame extends javax.swing.JFrame {
         paraTarget = new javax.swing.JTextField();
         jScrollPane7 = new javax.swing.JScrollPane();
         paraExplain = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         workingPanel3 = new javax.swing.JPanel();
         workingPanel4 = new javax.swing.JPanel();
 
@@ -221,13 +231,15 @@ public class MyFrame extends javax.swing.JFrame {
         suggestPopup.getAccessibleContext().setAccessibleName("");
 
         jDialog1.setBackground(new java.awt.Color(199, 236, 238));
-        jDialog1.setLocation(new java.awt.Point(300, 300));
+        jDialog1.setLocation(new java.awt.Point(500, 300));
+        jDialog1.setPreferredSize(new java.awt.Dimension(200, 200));
         jDialog1.setResizable(false);
-        jDialog1.setSize(new java.awt.Dimension(270, 130));
+        jDialog1.setSize(new java.awt.Dimension(120, 150));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(34, 112, 147));
-        jLabel1.setText("THÊM TỪ THÀNH CÔNG!");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("THÀNH CÔNG");
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setText("OK");
@@ -242,22 +254,22 @@ public class MyFrame extends javax.swing.JFrame {
         jDialog1Layout.setHorizontalGroup(
             jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDialog1Layout.createSequentialGroup()
-                .addGap(107, 107, 107)
+                .addGap(35, 35, 35)
                 .addComponent(jButton2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog1Layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(39, 39, 39))
+                .addContainerGap())
         );
         jDialog1Layout.setVerticalGroup(
             jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDialog1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         popupList.setFont(new java.awt.Font("VNI-Vari", 0, 14)); // NOI18N
@@ -461,7 +473,7 @@ public class MyFrame extends javax.swing.JFrame {
                     .addGroup(menuPanelLayout.createSequentialGroup()
                         .addGap(97, 97, 97)
                         .addComponent(jLabel7)))
-                .addGap(0, 152, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(menuPanelLayout.createSequentialGroup()
                 .addGap(251, 251, 251)
                 .addComponent(jLabel8)
@@ -484,7 +496,7 @@ public class MyFrame extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         workingPanel.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, 400));
@@ -530,7 +542,7 @@ public class MyFrame extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(showWordLayout.createSequentialGroup()
                         .addGroup(showWordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, showWordLayout.createSequentialGroup()
                                 .addGroup(showWordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(word_target1)
@@ -555,7 +567,7 @@ public class MyFrame extends javax.swing.JFrame {
                 .addComponent(word_type1)
                 .addGap(86, 86, 86)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         workingPanel.add(showWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 583, 340));
@@ -584,6 +596,11 @@ public class MyFrame extends javax.swing.JFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 addTargetFocusLost(evt);
+            }
+        });
+        addTarget.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addTargetMouseClicked(evt);
             }
         });
 
@@ -639,27 +656,33 @@ public class MyFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setText(" ");
+
         javax.swing.GroupLayout addPanelLayout = new javax.swing.GroupLayout(addPanel);
         addPanel.setLayout(addPanelLayout);
         addPanelLayout.setHorizontalGroup(
             addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addPanelLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(addType, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
-                    .addComponent(addTarget)
-                    .addComponent(addSpell, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
                 .addContainerGap(177, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(174, 174, 174))
+            .addGroup(addPanelLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(addType, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
+                        .addComponent(addTarget)
+                        .addComponent(addSpell, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         addPanelLayout.setVerticalGroup(
             addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addPanelLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(8, 8, 8)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(addTarget, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(addType, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -669,7 +692,7 @@ public class MyFrame extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         editdataPanel.addTab("Add Word", new javax.swing.ImageIcon(getClass().getResource("/tudua/dictionary/ButtonIcon/icons8_add_50px.png")), addPanel, ""); // NOI18N
@@ -701,35 +724,48 @@ public class MyFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setText(" ");
+
         javax.swing.GroupLayout removePanelLayout = new javax.swing.GroupLayout(removePanel);
         removePanel.setLayout(removePanelLayout);
         removePanelLayout.setHorizontalGroup(
             removePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(removePanelLayout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
-                .addComponent(deleteDic, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
-            .addGroup(removePanelLayout.createSequentialGroup()
                 .addGap(162, 162, 162)
                 .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, removePanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(removePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(deleteDic, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18))
         );
         removePanelLayout.setVerticalGroup(
             removePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(removePanelLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(deleteDic, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(306, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         editdataPanel.addTab("Remove Word", new javax.swing.ImageIcon(getClass().getResource("/tudua/dictionary/ButtonIcon/icons8_delete_50px_1.png")), removePanel); // NOI18N
 
         editWPanel.setBackground(new java.awt.Color(199, 236, 238));
+        editWPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editWPanelMouseClicked(evt);
+            }
+        });
 
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("VNI-Vari", 0, 18)); // NOI18N
         jButton3.setText("EDIT");
+        jButton3.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3)));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -773,6 +809,11 @@ public class MyFrame extends javax.swing.JFrame {
                 addTarget1FocusLost(evt);
             }
         });
+        addTarget1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addTarget1MouseClicked(evt);
+            }
+        });
         addTarget1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addTarget1ActionPerformed(evt);
@@ -794,27 +835,32 @@ public class MyFrame extends javax.swing.JFrame {
         });
         jScrollPane8.setViewportView(addExplain1);
 
+        jLabel9.setText(" ");
+
         javax.swing.GroupLayout editWPanelLayout = new javax.swing.GroupLayout(editWPanel);
         editWPanel.setLayout(editWPanelLayout);
         editWPanelLayout.setHorizontalGroup(
             editWPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editWPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(172, 172, 172))
+            .addGroup(editWPanelLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(editWPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
                     .addComponent(addTarget1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addType1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addSpell1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19))
-            .addGroup(editWPanelLayout.createSequentialGroup()
-                .addGap(165, 165, 165)
-                .addComponent(jButton3)
-                .addContainerGap())
         );
         editWPanelLayout.setVerticalGroup(
             editWPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(editWPanelLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(9, 9, 9)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(addTarget1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(addType1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -822,9 +868,9 @@ public class MyFrame extends javax.swing.JFrame {
                 .addComponent(addSpell1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(38, 38, 38)
                 .addComponent(jButton3)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         editdataPanel.addTab("Edit Word", new javax.swing.ImageIcon(getClass().getResource("/tudua/dictionary/ButtonIcon/icons8_edit_50px.png")), editWPanel); // NOI18N
@@ -837,7 +883,7 @@ public class MyFrame extends javax.swing.JFrame {
         );
         editPanelLayout.setVerticalGroup(
             editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(editdataPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(editdataPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE)
         );
 
         editdataPanel.getAccessibleContext().setAccessibleName("tab2");
@@ -907,6 +953,7 @@ public class MyFrame extends javax.swing.JFrame {
         explainArea.setColumns(20);
         explainArea.setFont(new java.awt.Font("SVN-Gotham Light", 0, 18)); // NOI18N
         explainArea.setRows(5);
+        explainArea.setFocusable(false);
         jScrollPane4.setViewportView(explainArea);
 
         playSound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tudua/dictionary/ButtonIcon/icons8_audio_32px.png"))); // NOI18N
@@ -928,7 +975,7 @@ public class MyFrame extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(word_target)
@@ -953,7 +1000,7 @@ public class MyFrame extends javax.swing.JFrame {
                 .addComponent(word_type)
                 .addGap(86, 86, 86)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         showallPanel.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 470, 430));
@@ -963,6 +1010,11 @@ public class MyFrame extends javax.swing.JFrame {
         paraPanel.setBackground(new java.awt.Color(199, 236, 238));
         paraPanel.setPreferredSize(new java.awt.Dimension(603, 470));
 
+        paraTarget.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                paraTargetActionPerformed(evt);
+            }
+        });
         paraTarget.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 paraTargetKeyPressed(evt);
@@ -973,25 +1025,38 @@ public class MyFrame extends javax.swing.JFrame {
         paraExplain.setRows(5);
         jScrollPane7.setViewportView(paraExplain);
 
+        jLabel3.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel3.setText("Nhập văn bản:");
+
+        jLabel4.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel4.setText("Nghĩa Tiếng Việt là:");
+
         javax.swing.GroupLayout paraPanelLayout = new javax.swing.GroupLayout(paraPanel);
         paraPanel.setLayout(paraPanelLayout);
         paraPanelLayout.setHorizontalGroup(
             paraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paraPanelLayout.createSequentialGroup()
                 .addGap(85, 85, 85)
-                .addGroup(paraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(paraTarget)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addGroup(paraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3)
+                    .addGroup(paraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(paraTarget)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         paraPanelLayout.setVerticalGroup(
             paraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paraPanelLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(51, 51, 51)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(paraTarget, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(111, 111, 111)
+                .addGap(60, 60, 60)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(paraPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 72, 603, 480));
@@ -1002,11 +1067,11 @@ public class MyFrame extends javax.swing.JFrame {
         workingPanel3.setLayout(workingPanel3Layout);
         workingPanel3Layout.setHorizontalGroup(
             workingPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         workingPanel3Layout.setVerticalGroup(
             workingPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         getContentPane().add(workingPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 87, -1, -1));
@@ -1017,11 +1082,11 @@ public class MyFrame extends javax.swing.JFrame {
         workingPanel4.setLayout(workingPanel4Layout);
         workingPanel4Layout.setHorizontalGroup(
             workingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 571, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         workingPanel4Layout.setVerticalGroup(
             workingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         getContentPane().add(workingPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 87, -1, -1));
@@ -1036,16 +1101,69 @@ public class MyFrame extends javax.swing.JFrame {
 
     private void wordTargetKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_wordTargetKeyPressed
         // TODO add your handling code here:
+        //wordTarget.setText(wordTarget.getText().toLowerCase());
         /*
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            String target = wordTarget.getText().trim();
-            String explain = DictionaryManagement.dictionaryLookup(target);
-            showTarget.setText(target);
-            showExplain.setText(explain);
             
+            String explain = DictionaryManagement.lookUpWord(wordTarget.getText().toLowerCase().trim(), Dictionary.getArrayWord(), 0, Dictionary.getArrayWord().size() - 1);
+            //System.out.println(explain);
+            word_target1.setText(wordTarget.getText());
+            word_type1.setText("");
+            word_pronoun1.setText("");
+            explainArea1.setText(explain);
+                
             showWord.setVisible(true);
             backButton.setVisible(true);
             menuPanel.setVisible(false);
+            suggestPopup.setVisible(false); 
+        } 
+        */
+        
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {    
+            String explain;
+            try {
+                explain = connect.getExplain(wordTarget.getText().trim());
+                word_target1.setText(wordTarget.getText());
+                word_type1.setText("");
+                word_pronoun1.setText("");
+                explainArea1.setText(explain);
+                
+                showWord.setVisible(true);
+                backButton.setVisible(true);
+                menuPanel.setVisible(false);
+                suggestPopup.setVisible(false); 
+            } catch (SQLException ex) {
+                Logger.getLogger(MyFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }    
+        
+        /*
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            
+            try {
+                String explain = Connect.getExplain(wordTarget.getText().trim());
+                word_target1.setText(wordTarget.getText());
+                explainArea1.setText(explain);
+                
+                showWord.setVisible(true);
+                backButton.setVisible(true);
+                menuPanel.setVisible(false);
+                suggestPopup.setVisible(false); 
+            } catch (SQLException ex) {
+                word_target1.setText(wordTarget.getText());
+                word_type1.setText("KHÔNG TÌM THẤY TỪ");
+                word_pronoun1.setText("");
+                explainArea1.setText("");
+                
+                showWord.setVisible(true);
+                backButton.setVisible(true);
+                menuPanel.setVisible(false);
+                suggestPopup.setVisible(false); 
+                Logger.getLogger(MyFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            System.out.println("hehiehi");
         }
         */
         
@@ -1112,6 +1230,7 @@ public class MyFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (wordTarget.getText().equals("Search any words here")) {
         char target = evt.getKeyChar();
+        //wordTarget.setText(wordTarget.getText().toLowerCase());
         wordTarget.setText("");
         wordTarget.setForeground(Color.BLACK);
         }
@@ -1119,14 +1238,18 @@ public class MyFrame extends javax.swing.JFrame {
 
     private void wordTargetKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_wordTargetKeyReleased
         // TODO add your handling code here:
+        if (!wordTarget.getText().trim().equals("")) {
         if (evt.getKeyCode() != KeyEvent.VK_DOWN && evt.getKeyCode() != KeyEvent.VK_UP && evt.getKeyCode() != KeyEvent.VK_ENTER){
-            popupList.setListData(suggestWord(wordTarget.getText()));
+            wordTarget.setText(wordTarget.getText().toLowerCase());
+            popupList.setListData(suggestWord(wordTarget.getText().toLowerCase().trim()));
+            if (suggestWord(wordTarget.getText().toLowerCase().trim()).length == 0) {
+                suggestPopup.setVisible(false);
+                return;
+            }
             suggestPopup.add(popupPanel);
             suggestPopup.show(wordTarget, wordTarget.getX(), wordTarget.getY() + wordTarget.getHeight());
             wordTarget.requestFocus(true);   
-        }
-        
-        
+        } }
     }//GEN-LAST:event_wordTargetKeyReleased
 
     private void suggestPopupAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_suggestPopupAncestorAdded
@@ -1135,26 +1258,25 @@ public class MyFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        jLabel1.setText(DictionaryManagement.dictionaryInsert(addTarget.getText(), addExplain.getText(), addType.getText(), addSpell.getText()));
-        DictionaryManagement.dictionaryInsert(addTarget.getText(), addExplain.getText(), addType.getText(), addSpell.getText());
-        jDialog1.setVisible(true);
+        jLabel5.setText(DictionaryManagement.dictionaryInsert(addTarget.getText().trim(), addExplain.getText(), addType.getText(), addSpell.getText()));
+        //jDialog1.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void deleteDicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteDicMouseClicked
         // TODO add your handling code here:
+        jLabel6.setText(" ");
         deleteDic.setText("");
     }//GEN-LAST:event_deleteDicMouseClicked
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         try {
             // TODO add your handling code here:
-            jLabel1.setText(DictionaryManagement.dictionaryDelete(deleteDic.getText()));
-            DictionaryManagement.dictionaryDelete(deleteDic.getText());
-            jDialog1.setVisible(true);
+            jLabel6.setText(DictionaryManagement.dictionaryDelete(deleteDic.getText()));
+            //jDialog1.setVisible(true);
             
         } catch (IOException ex) {
             Logger.getLogger(MyFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }   
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -1331,9 +1453,10 @@ public class MyFrame extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         try {
             // TODO add your handling code here:
-            jLabel1.setText(DictionaryManagement.dictionaryFix(addTarget1.getText(), addType1.getText(), addExplain1.getText(), addSpell1.getText()));
+            jLabel9.setText(DictionaryManagement.dictionaryFix(addTarget1.getText(), addType1.getText(), addExplain1.getText(), addSpell1.getText()));
             DictionaryManagement.dictionaryFix(addTarget1.getText(), addType1.getText(), addExplain1.getText(), addSpell1.getText());
-            jDialog1.setVisible(true);
+            
+            //jDialog1.setVisible(true);
         } catch (IOException ex) {
             Logger.getLogger(MyFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1398,6 +1521,27 @@ public class MyFrame extends javax.swing.JFrame {
     private void addTarget1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTarget1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_addTarget1ActionPerformed
+
+    private void addTargetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addTargetMouseClicked
+        // TODO add your handling code here:
+        if (evt.getClickCount() == 2) addTarget.setText("");
+        jLabel5.setText(" ");
+    }//GEN-LAST:event_addTargetMouseClicked
+
+    private void paraTargetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paraTargetActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_paraTargetActionPerformed
+
+    private void editWPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editWPanelMouseClicked
+        // TODO add your handling code here:
+        jLabel9.setText(" ");
+    }//GEN-LAST:event_editWPanelMouseClicked
+
+    private void addTarget1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addTarget1MouseClicked
+        // TODO add your handling code here:
+        if (evt.getClickCount() == 2) addTarget1.setText("");
+        jLabel9.setText(" ");
+    }//GEN-LAST:event_addTarget1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1464,8 +1608,13 @@ public class MyFrame extends javax.swing.JFrame {
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
